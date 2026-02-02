@@ -1,0 +1,17 @@
+export const NEWS_PORTALS = [
+  "https://www.cnbcindonesia.com/market/",
+  "https://market.bisnis.com/",
+  "https://www.kabarbursa.com/market-hari-ini",
+  "https://finance.detik.com/",
+  "https://katadata.co.id/finansial/bursa",
+  "https://insight.kontan.co.id/",
+  "https://snips.stockbit.com/snips-terbaru/",
+  "https://money.kompas.com/cuan",
+  "https://investor.id/market/",
+  "https://www.bloombergtechnoz.com/kanal/finansial",
+  "https://ekonomi.bisnis.com/",
+  "https://ekbis.sindonews.com/bursa-finansial",
+  "https://www.idnfinancials.com/id/news",
+  "https://www.idxchannel.com/market-news/",
+  "https://www.google.com/finance/",
+];

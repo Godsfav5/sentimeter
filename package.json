@@ -1,0 +1,33 @@
+{
+  "name": "sentimeter",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "description": "A sentiment-based stock trading bot for the Indonesian Stock Exchange (IHSG/IDX). Sentimeter crawls financial news from Indonesian portals, extracts stock tickers using AI, fetches market data, and generates daily buy recommendations with entry prices, stop losses, and target prices.",
+  "private": true,
+  "author": {
+    "name": "snowfluke"
+  },
+  "scripts": {
+    "dev": "bun run scripts/dev.ts",
+    "dev:api": "bun run --watch src/api/index.ts",
+    "dev:web": "bun run --cwd web dev",
+    "build": "bun build src/api/index.ts --outdir=dist --target=bun",
+    "build:web": "bun run --cwd web build",
+    "job:morning": "bun run src/jobs/daily-analysis.ts --schedule=morning",
+    "job:evening": "bun run src/jobs/daily-analysis.ts --schedule=evening",
+    "db:migrate": "bun run src/lib/database/migrate.ts",
+    "typecheck": "bunx tsc --noEmit && bunx tsc --noEmit --project web/tsconfig.json"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "cheerio": "^1.0.0",
+    "yahoo-finance2": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

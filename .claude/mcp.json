@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "web_search_prime": {
+      "type": "sse",
+      "url": "http://127.0.0.1:8045/mcp/web_search_prime/mcp"
+    },
+    "web_reader": {
+      "type": "sse",
+      "url": "http://127.0.0.1:8045/mcp/web_reader/mcp"
+    },
+    "zai-mcp-server": {
+      "type": "sse",
+      "url": "http://127.0.0.1:8045/mcp/zai-mcp-server/mcp"
+    }
+  }
+}
