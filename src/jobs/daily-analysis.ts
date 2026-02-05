@@ -27,6 +27,7 @@ import {
   failJobExecution,
   hasJobRunToday,
   getRecentNewsArticles,
+  getActiveTickers,
 } from "../lib/database/queries.ts";
 import type { JobSchedule, NewsArticleInsert, NewsTickerInsert } from "../lib/database/types.ts";
 import { generateContentHash } from "../lib/crawler/deduplicator.ts";
@@ -111,8 +112,16 @@ export async function runDailyAnalysis(schedule: JobSchedule, force: boolean = f
 
     // Step 3: Aggregate tickers by relevance and sentiment
     console.log("\n📊 Step 3: Analyzing top tickers...");
+
+    // Get tickers with active positions to exclude them
+    const activeTickers = new Set(getActiveTickers());
+    if (activeTickers.size > 0) {
+      console.log(`   ℹ️  Excluding ${activeTickers.size} tickers with active positions: ${[...activeTickers].join(", ")}`);
+    }
+
     const topTickers = tickerResult.tickers
       .filter((t) => t.sentiment > 0.2) // Only positive sentiment
+      .filter((t) => !activeTickers.has(t.ticker.toUpperCase())) // Exclude active positions
       .sort((a, b) => b.relevance - a.relevance || b.sentiment - a.sentiment)
       .slice(0, 10);
 

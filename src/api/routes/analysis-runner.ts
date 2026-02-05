@@ -18,6 +18,7 @@ import {
   completeJobExecution,
   failJobExecution,
   getRecentNewsArticles,
+  getActiveTickers,
 } from "../../lib/database/queries.ts";
 import type { JobSchedule } from "../../lib/database/types.ts";
 
@@ -62,8 +63,16 @@ export async function runAnalysisWithLogging(jobId: number, schedule: JobSchedul
 
     // Step 3: Aggregate tickers
     logEmitter.step(3, 5, "Analyzing top tickers...");
+
+    // Get tickers with active positions to exclude them
+    const activeTickers = new Set(getActiveTickers());
+    if (activeTickers.size > 0) {
+      logEmitter.info(`Excluding ${activeTickers.size} tickers with active positions: ${[...activeTickers].join(", ")}`);
+    }
+
     const topTickers = tickerResult.tickers
       .filter((t) => t.sentiment > 0.2)
+      .filter((t) => !activeTickers.has(t.ticker.toUpperCase())) // Exclude active positions
       .sort((a, b) => b.relevance - a.relevance || b.sentiment - a.sentiment)
       .slice(0, 10);
 

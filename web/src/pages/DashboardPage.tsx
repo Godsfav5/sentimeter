@@ -2,7 +2,7 @@
  * Dashboard Page
  */
 
-import { Card, LoadingState, ErrorState, EmptyState, StatsCard, LogPanel, SchedulerPanel } from "@/components";
+import { Card, LoadingState, ErrorState, EmptyState, StatsCard, LogPanel, SchedulerPanel, SummaryTable } from "@/components";
 import { RecommendationCard } from "@/components/RecommendationCard";
 import { ActivePositionCard } from "@/components/ActivePositionCard";
 import { useRecommendations, useRefresh, useLogStream, useScheduler, formatPercent } from "@/lib";
@@ -71,6 +71,12 @@ export function DashboardPage() {
       <LogPanel logs={logs} connected={connected} onClear={clearLogs} visible={refreshing || refreshResult?.triggered === true} />
 
       <StatsCard stats={stats} />
+
+      <SummaryTable
+        recommendations={data.recommendations}
+        activePositions={data.activePositions}
+        date={data.date}
+      />
 
       {data.activePositions.length > 0 && (
         <section>

@@ -47,16 +47,17 @@ export async function fetchWithRetry(
         redirect: "follow",
       });
 
-      clearTimeout(timeoutId);
-
       if (!response.ok) {
+        clearTimeout(timeoutId);
         throw new FetchError(
           "HTTP_ERROR",
           `HTTP ${response.status}: ${response.statusText}`
         );
       }
 
+      // Read body with same timeout (abort signal still active)
       const html = await response.text();
+      clearTimeout(timeoutId);
       return html;
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));

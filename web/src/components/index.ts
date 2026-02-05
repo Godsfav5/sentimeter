@@ -6,3 +6,4 @@ export { StatsCard } from "./StatsCard";
 export { Navigation } from "./Navigation";
 export { LogPanel } from "./LogPanel";
 export { SchedulerPanel } from "./SchedulerPanel";
+export { SummaryTable } from "./SummaryTable";

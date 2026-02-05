@@ -257,6 +257,51 @@ export function getActiveRecommendations(): Recommendation[] {
   return stmt.all() as Recommendation[];
 }
 
+export function hasActivePositionForTicker(ticker: string): boolean {
+  const stmt = db.prepare(`
+    SELECT 1 FROM recommendations
+    WHERE ticker = $ticker
+      AND status IN ('pending', 'entry_hit')
+    LIMIT 1
+  `);
+
+  return stmt.get({ $ticker: ticker.toUpperCase() }) !== null;
+}
+
+export function getActiveTickers(): string[] {
+  const stmt = db.prepare(`
+    SELECT DISTINCT ticker FROM recommendations
+    WHERE status IN ('pending', 'entry_hit')
+  `);
+
+  const rows = stmt.all() as Array<{ ticker: string }>;
+  return rows.map((row) => row.ticker);
+}
+
+export function deleteDuplicatePositions(): number {
+  // Delete newer duplicates, keeping older ones (lower id = older)
+  const stmt = db.prepare(`
+    DELETE FROM recommendations
+    WHERE id NOT IN (
+      SELECT MIN(id)
+      FROM recommendations
+      WHERE status IN ('pending', 'entry_hit')
+      GROUP BY ticker
+    )
+    AND status IN ('pending', 'entry_hit')
+    AND ticker IN (
+      SELECT ticker
+      FROM recommendations
+      WHERE status IN ('pending', 'entry_hit')
+      GROUP BY ticker
+      HAVING COUNT(*) > 1
+    )
+  `);
+
+  const result = stmt.run();
+  return result.changes;
+}
+
 export function updateRecommendationStatus(
   id: number,
   status: RecommendationStatus,
