@@ -177,8 +177,9 @@ export function initDatabase(): void {
   `);
 
   // Migration: add order_type column if not exists
+  // NOTE: SQLite ALTER TABLE ADD COLUMN does NOT support CHECK constraints
   try {
-    db.exec(`ALTER TABLE recommendations ADD COLUMN order_type TEXT DEFAULT 'LIMIT' CHECK(order_type IN ('LIMIT', 'MARKET'))`);
+    db.exec(`ALTER TABLE recommendations ADD COLUMN order_type TEXT DEFAULT 'LIMIT'`);
   } catch {
     // Column already exists - ignore
   }

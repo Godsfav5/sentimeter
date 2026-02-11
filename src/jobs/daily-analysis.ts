@@ -31,6 +31,7 @@ import {
 } from "../lib/database/queries.ts";
 import type { JobSchedule, NewsArticleInsert, NewsTickerInsert } from "../lib/database/types.ts";
 import { generateContentHash } from "../lib/crawler/deduplicator.ts";
+import { initDatabase } from "../lib/database/schema.ts";
 
 const MIN_OVERALL_SCORE = 65;
 const MAX_RECOMMENDATIONS_PER_RUN = 5;
@@ -306,6 +307,9 @@ export async function runDailyAnalysis(schedule: JobSchedule, force: boolean = f
 
 // CLI entry point
 if (import.meta.main) {
+  // Ensure migrations (like order_type column) are applied
+  initDatabase();
+
   const args = process.argv.slice(2);
   const force = args.includes("--force") || args.includes("-f");
   const hour = new Date().getHours();
